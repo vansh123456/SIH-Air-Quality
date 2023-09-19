@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100&family=League+Spartan:wght@100&family=Merriweather+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+</head>
+<body>
+    <div class="wrapper">
+
+
+        <img src="jss logo.png" class="rotating-image">
+        <button class="btn-suggestion" id="websiteLink">Click Here For Survey</button>
+        <div class="h1">Smart India Hackathon</div>
+        <div class="h1 aqi1">Air Quality Index</div>
+         <div class="tab-container" data-UserWeather>
+        </div>
+
+
+        <div class="weather-container">
+
+
+            <div class="sub-container grant-location-container">
+                <img src="location.png" width="80" height="80" loading="lazy">
+                <p>Grant Location Access</p>
+                <p>Allow access to give Air Quality Information</p>
+                <button class="btn" data-GrantAccess>Grant Access</button>
+            </div>
+
+
+            <form action="" class="form-container" data-searchForm>
+            </form>
+
+
+            <div class="sub-container loading-container">
+                <img src="loading.webp" height="150" width="150">
+                <p>loading</p>
+            </div>
+
+
+            <div class="sub-container user-info-container">
+                <div class="name">
+                    <p ><a href="#" id="name" data-cityName></a></p>
+                    <img data-countryIcon>
+                </div>
+
+
+                <button class="btn-rtaqi">Click Here for Real Time AQI</button>
+
+
+                <div class="aqi">
+                <div class="aqiName">Air quality index: </div>
+                <div></div>
+                <p data-aqi></p>
+                </div>
+
+
+                <div class="condition"></div>
+
+
+                <div class="parameter-container">
+
+
+                    <div class="btn-pink parameter">
+                        <p>PM10</p>
+                        <p data-pm10></p>
+                    </div>
+
+
+                    <div class="btn-pink parameter">
+                        <p>PM2.5</p>
+                        <p data-pm25></p>
+                    </div>
+
+
+                    <div class="btn-pink parameter">
+                        <p>Carbon Monoxide</p>
+                        <p data-co></p>
+                    </div>
+
+
+                    <div class="btn-pink parameter">
+                        <p>Ozone</p>
+                        <p data-ozone></p>
+                    </div>
+
+
+                    <div class="btn-pink parameter">
+                        <p>Sulphur Dioxide</p>
+                        <p data-so2></p>
+                    </div>
+
+
+                    <div class="btn-pink parameter">
+                        <p>Nitrogen Dioxide</p>
+                        <p data-no2></p>
+                    </div>
+
+
+                    <div class="btn-pink parameter">
+                        <p>Nitrogen Oxide</p>
+                        <p data-no></p>
+                    </div>
+
+
+                    <div class="btn-pink parameter">
+                        <p>Ammonia</p>
+                        <p data-nh3></p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

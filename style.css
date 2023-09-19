@@ -1,0 +1,465 @@
+.tab.current-tab{
+    background-color: rgba(70, 133, 249, 0.5);
+    border-radius: 4px;
+    cursor: pointer;
+}
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat";
+    overflow-x: hidden;
+    user-select: none;
+}
+:root{
+    --colorDark1: #112D4E;
+    --colorDark2: #3F72AF;
+    --colorLight1: #DBE2EF;
+    --colorLight2: #F9F7F7;
+}
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    color: var(--colorLight2);
+    /* background-image: linear-gradient(160deg, #112d4e 0%, #3f72af 100%); */
+    background-image: url(WhatsApp\ Image\ 2023-09-16\ at\ 11.40.39\ PM.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.h1{
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 20px;
+    font-weight:bolder;
+    letter-spacing: 0.25rem;
+    font-size: 4rem;
+    text-decoration: underline;
+    font-family: "Montserrat";
+    animation-name: animate3;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+}
+@keyframes animate3 {
+    0% {
+        transform: translateY(-200%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+.aqi1{
+    font-size: 3rem;
+    font-weight: 700;
+    animation-name: animate4;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+}
+@keyframes animate4 {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+.tab-container{
+    width: 90%;
+    max-width: 550px;
+    margin: 0 auto;
+    display: flex;
+    margin-top: 4rem;
+    font-weight: bold;
+}
+.tab{
+    cursor: pointer;
+    font-size: 0.875rem;
+    letter-spacing: 1.75px;
+    padding: 5px 8px;
+    justify-content: center;
+    align-items: center;
+}
+.weather-container{
+    margin-block: 4rem;
+}
+.btn{
+    all: unset;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    border-radius: 5px;
+    background-color: #87CEEB;
+    cursor: pointer;
+    padding: 10px 30px;
+    margin: 10px;
+    box-shadow: 5px 5px 7px 0 #0000003f;
+}
+.sub-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.grant-location-container{
+    display: none;
+}
+.grant-location-container.active{
+    display: flex;
+    animation-name: opax;
+    animation-iteration-count: 1;
+    animation-duration: 3s;
+}
+@keyframes opax {
+    0%{
+        opacity: 0;
+        transform: scale(0);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.grant-location-container img{
+    margin-bottom: 2rem;
+}
+.grant-location-container p:first-of-type{
+    font-size: 1.75rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.grant-location-container p:last-of-type{
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-top: 0.75rem;
+    margin-bottom: 1.75rem;
+    letter-spacing: 0.75px;
+}
+.loading-container{
+    display: none;
+}
+.loading-container.active{
+    display: flex;
+}
+.loading-container p{
+    text-transform: uppercase;
+}
+.user-info-container{
+    display: none;
+}
+.user-info-container.active{
+    display: flex;
+}
+.user-info-container p{
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+.user-info-container img{
+    width: 90px;
+    height: 90px;
+}
+.name{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 0 0.5rem;
+    margin-bottom: 1rem;
+    animation-name: animate2;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+}
+@keyframes animate2 {
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+.name p{
+    font-size: 2rem;
+}
+.name img{
+    width: 25px;
+    height: 20px;
+}
+
+
+.user-info-container p[data-aqi]{
+    font-size: 2.75rem;
+    font-weight: 700;
+    font: 2.75rem "Montserrat";
+}
+.parameter-container{
+    display: flex;
+    gap: 10px 10px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+.parameter{
+    display: flex;
+    flex-wrap: wrap;
+    width: 30%;
+    max-width: 1000px;
+    background-color: rgba(219, 226, 239, 0.5);
+    border-radius: 5px;
+    padding: 1rem;
+    flex-direction: column;
+    gap: 5px 0;
+    margin: 30px;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+.parameter p:first-of-type{
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    display: flex;
+    font-family: "Montserrat";
+    user-select: none;
+}
+.parameter p:last-of-type{
+    font-size: 1rem;
+    font-weight: 200;
+    user-select: none;
+}
+.form-container{
+    display: none;
+    width: 90%;
+    max-width: 550px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    gap: 0 10px;
+    margin-bottom: 3rem;
+}
+.form-container.active{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-container input{
+    all: unset;
+    width: calc(100% - 20px);
+    height: 40px;
+    padding: 0 20px;
+    background-color: rgba(219, 226, 239, 0.5);
+    border-radius: 10px;
+}
+.form-container input::placeholder{
+    color: rgba(255, 255, 255, 0.7);
+}
+.form-container input:focus{
+    outline: 3px solid rgba(255, 255, 255, 0.7);
+}
+.form-container .btn{
+    padding: unset;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+}
+.aqi{
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    padding-top: 20px ;
+    animation-name: animate;
+    animation-iteration-count: 1;
+    animation-duration: 5s;
+}
+@keyframes animate {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.aqiName{
+    text-decoration: underline;
+    font-size: 2.5rem;
+    font-family: "Montserrat";
+}
+.btn-pink{
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: #87CEEB;
+    opacity: 0.8;
+    padding: 0.8rem 2.3rem;
+    color: white;
+    font-size: 18px;
+    box-shadow: 5px 5px 7px 0 #0000003f;
+    position: relative;
+    z-index: 1;
+    animation-name: scaling;
+    animation-iteration-count: 1;
+    animation-duration: 7s;
+    animation-direction: normal;
+}
+@keyframes scaling {
+    0% {
+        transform: translateY(-1100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+.btn-pink::before{
+    content: "";
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 1s;
+    z-index: -1;
+
+
+}
+.btn-pink:hover::before{
+    transform: scaleX(1);
+}
+.btn:hover{
+    transform: scale(1);
+}
+#name{
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    text-decoration: none;
+}
+.condition{
+    font-size: 2rem;
+    padding: 20px;
+    animation-name: animate5;
+    animation-iteration-count: 1;
+    animation-duration: 4s;
+}
+@keyframes animate5 {
+    0%{
+        opacity: 0;
+        transform: scale(0);
+    }
+    50%{
+        transform: scale(0.5);
+        opacity: 0.5;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.rotating-image{
+    width: 80px;
+    height: 80px;
+    padding: 2px;
+    cursor: pointer;
+    user-select: none;
+    animation: rotateAnimation 2s linear 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+@keyframes rotateAnimation {
+    from{
+        transform: scale(0) rotate(0deg);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1) rotate(360deg);
+        opacity: 1;
+    }
+}
+.btn-suggestion{
+    width: 80px;
+    margin-top: -75px;
+    margin-left: 1317px;
+    padding: 2px;
+    display: flex;
+    font-size: 15px;
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: #87CEEB;
+    font-family: "Montserrat";
+    color: white;
+    border: yellow;
+    gap: 10px 10px;
+    cursor: pointer;
+    box-shadow: 5px 5px 7px 0 #0000003f;
+    border-radius: 10px;
+    animation-name: animate6;
+    animation-iteration-count: 1;
+    animation-duration: 2s;
+}
+.btn-suggestion::before{
+    content: "";
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 1s;
+    z-index: -1;
+
+
+}
+.btn-suggestion:hover::before{
+    transform: scaleX(1);
+}
+.btn-suggestion:hover{
+    transform: scale(1);
+}
+.btn-rtaqi{
+    padding: 2px;
+    font-family: "Montserrat";
+    color: white;
+    background-color: #87CEEB;
+    display: flex;
+    flex-wrap: nowrap;
+    box-shadow: 5px 5px 7px 0 #0000003f;
+    border-radius: 4px;
+    font-size: 17px;
+    border:none;
+    cursor: pointer;
+    animation-name: animate6;
+    animation-iteration-count: 1;
+    animation-duration: 4s;
+}
+@keyframes animate6 {
+    from{
+        transform: translateY(-200%);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.btn-rtaqi::before{
+    content: "";
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 1s;
+    z-index: -1;
+
+
+}
+.btn-rtaqi:hover::before{
+    transform: scaleX(1);
+}
+.btn-rtaqi:hover{
+    transform: scale(1);
+}
