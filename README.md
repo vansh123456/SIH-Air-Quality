@@ -1,5 +1,17 @@
-# Smart India Hackathon:Air Quality WebApplication
-##An application written in html,css and javascript to autodetect location 
-and show the air quality of that place
-![image1][image1.png]
-![image2][image2.png]
+
+# AQI Monitoring App!
+
+AQI monitoring app designed during SIH internal testing round
+
+
+## Features
+
+- Weather API Usage
+- Auto Location Access
+
+## Screenshots
+
+![Main](https://github.com/vansh123456/SIH-Air-Quality/blob/9383c4ee0b95e78d597fa6b49ba1dd5b91588367/images/main.png)
+
+![specs](https://github.com/vansh123456/SIH-Air-Quality/blob/9383c4ee0b95e78d597fa6b49ba1dd5b91588367/images/specs.png)
+
